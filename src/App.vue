@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import NHeader from '@/components/NHeader.vue'
-import NFooter from '@/components/NFooter.vue'
+import NlHeader from '@/components/NlHeader.vue'
+import NlFooter from '@/components/NlFooter.vue'
 </script>
 
 <template>
   <el-container>
     <el-header>
-      <n-header />
+      <nl-header />
     </el-header>
     <el-main>
       <router-view></router-view>
     </el-main>
     <el-footer>
-      <n-footer />
+      <nl-footer />
     </el-footer>
   </el-container>
 </template>

@@ -2,7 +2,6 @@
 import { reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
 
-
 const router = useRouter()
 const menuList = reactive([
   { name: '关于', path: 'about' },
@@ -27,7 +26,7 @@ const selectMenu = (item: string) => {
         v-for="item in menuList"
         :key="item.path"
         class="nav"
-        :class="{ 'active': activeMenu === item.path }"
+        :class="{ active: activeMenu === item.path }"
         @click="selectMenu(item.path)"
       >
         <span>{{ item.name }}</span>
@@ -37,7 +36,6 @@ const selectMenu = (item: string) => {
 </template>
 
 <style scoped lang="scss">
-
 .header-container {
   display: flex;
   align-items: center;

@@ -21,7 +21,7 @@ const selectMenu = (item: string) => {
 <template>
   <div class="header-container">
     <router-link to="/" class="logo">纳西妲图书馆</router-link>
-    <el-space :size="30" spacer="">
+    <el-space :size="30" style="transform: translateX(30px);">
       <div
         v-for="item in menuList"
         :key="item.path"

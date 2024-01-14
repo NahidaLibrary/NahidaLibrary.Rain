@@ -8,35 +8,104 @@ const total = 100
 
 <template>
   <div class="music-container">
-    <div class="music-header">
-      <h2>专辑陈列</h2>
-    </div>
-    <div class="music-main">
-      <div class="music-main-item">
-        <div v-for="item in 5" :key="item" class="album-item-wrapper">
-          <div class="album-item">
-            <el-image :src="url" fit="fit" />
+    <div class="background">
+
+      <div class="music-header">
+        <h2>专辑陈列</h2>
+      </div>
+
+      <div class="music-main">
+        <div class="music-main-item">
+          <div v-for="item in 5" :key="item" class="album-item-wrapper">
+            <div class="album-item">
+              <el-image :src="url" fit="fill" />
+            </div>
+          </div>
+        </div>
+
+        <div class="music-main-item">
+          <div v-for="item in 5" :key="item" class="album-item-wrapper">
+            <div class="album-item">
+              <el-image :src="url" fit="fill" />
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="music-main-item">
-        <div v-for="item in 5" :key="item" class="album-item-wrapper">
-          <div class="album-item">
-            <el-image :src="url" fit="fit" />
-          </div>
-        </div>
+      <div class="music-footer">
+        <nl-pagination :total="total" />
       </div>
     </div>
-    <div class="music-footer">
-      <nl-pagination :total="total" />
+
+    <div class="album-info-container">
+
+      <div class="album-info-left">
+        <el-image :src="url" fit="fill" />
+      </div>
+
+      <div class="album-info-right">
+        <span class="album-title">专辑名称</span>
+        <p class="album-describe">专辑描述</p>
+        <button class="bnt-play">PLAY</button>
+      </div>
+
     </div>
+
   </div>
 </template>
 
 <style scoped lang="scss">
 .music-container {
+  position: relative;
   height: 100%;
+}
+
+.background {
+  opacity: 0;
+}
+
+.album-info-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  align-items: flex-start;
+
+  .album-info-left {
+    height: 40vh;
+    width: 40vh;
+
+    .el-image {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .album-info-right {
+    position: relative;
+    height: 40vh;
+    width: 40vh;
+
+    .album-title {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .album-describe {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .bnt-play {
+      position: absolute;
+      bottom: 0;
+      display: inline-block;
+      font-size: 1.5rem;
+      padding: 5px;
+    }
+  }
 }
 
 .music-header {

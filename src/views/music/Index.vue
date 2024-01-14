@@ -88,12 +88,17 @@ const total = 100
     height: 40vh;
     width: 40vh;
 
+    // display: flex;
+    // justify-content: center;
+
     .album-title {
+      display: block;
       font-size: 2rem;
       font-weight: 700;
     }
 
     .album-describe {
+      display: block;
       font-size: 1rem;
       font-weight: 700;
     }
@@ -101,9 +106,7 @@ const total = 100
     .bnt-play {
       position: absolute;
       bottom: 0;
-      display: inline-block;
       font-size: 1.5rem;
-      padding: 5px;
     }
   }
 }
